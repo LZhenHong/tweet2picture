@@ -4,15 +4,21 @@
     "version": "1.0",
     "description": "Convert tweets to pictures",
     "background": {
-        "service_worker": "background.ts"
+        "service_worker": "js/background.js"
+    },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
     },
     "content_scripts": [
         {
             "matches": [
-                "https://twitter.com/*"
+                "https://twitter.com/*",
+                "https://x.com/*"
             ],
             "js": [
-                "content.ts"
+                "js/content_scripts.js",
+                "js/vendor.js"
             ]
         }
     ],
