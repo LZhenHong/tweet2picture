@@ -10,11 +10,11 @@
         "test": "npx jest",
         "style": "prettier --write \"src/**/*.{ts,tsx}\""
     },
-    "author": "",
+    "author": "Eden",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/chibat/chrome-extension-typescript-starter.git"
+        "url": "https://github.com/LZhenHong/tweet2picture"
     },
     "dependencies": {
         "react": "^18.2.0",
