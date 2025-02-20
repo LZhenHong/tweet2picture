@@ -1,33 +1,31 @@
 {
     "manifest_version": 3,
-    "name": "Chrome Extension TypeScript Starter",
-    "description": "Chrome Extension, TypeScript, Visual Studio Code",
+    "name": "Tweet to Picture",
     "version": "1.0",
-    "options_ui": {
-        "page": "options.html"
-    },
-    "action": {
-        "default_icon": "icon.png",
-        "default_popup": "popup.html"
+    "description": "Convert tweets to pictures",
+    "background": {
+        "service_worker": "background.ts"
     },
     "content_scripts": [
         {
             "matches": [
-                "<all_urls>"
+                "https://twitter.com/*"
             ],
             "js": [
-                "js/vendor.js",
-                "js/content_script.js"
+                "content.ts"
             ]
         }
     ],
-    "background": {
-        "service_worker": "js/background.js"
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon.png",
+            "48": "icon.png",
+            "128": "icon.png"
+        }
     },
     "permissions": [
-        "storage"
-    ],
-    "host_permissions": [
-        "<all_urls>"
+        "activeTab",
+        "scripting"
     ]
 }
